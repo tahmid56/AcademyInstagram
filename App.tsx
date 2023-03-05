@@ -1,18 +1,23 @@
 
-import { Text, View } from "react-native";
-import colors from "./src/theme/colors";
-import fonts from "./src/theme/fonts";
-import AntDesign from 'react-native-vector-icons/AntDesign';
+import FeedPost from "./src/components/FeedPost";
+import posts from './src/assets/data/posts.json';
+import { StyleSheet, View } from "react-native";
+import HomeScreen from "./src/screens/HomeScreen/HomeScreen";
+import CommentScreen from "./src/screens/CommentScreen/CommentScreen";
 
 const App = () =>{
     return (
-        <View style={{flex:1, alignItems: "center",justifyContent: "center"}}>
-            <Text style={{color: colors.primary, fontSize: fonts.size.xxl}}>
-                Hello world            
-                <AntDesign name="stepforward" size={25}/>
-            </Text>
+        <View style={styles.app}>
+            {/* <HomeScreen/> */}
+            <CommentScreen/>
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    app:{
+        flex: 1
+    }
+})
 
 export default App;
